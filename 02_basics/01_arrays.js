@@ -48,3 +48,6 @@ console.log(myn2); // o/p- [ 1, 2, 3 ] extracted element from array
 // slice() is non-destructive, used for copying/extracting part of an array.
 // splice() is destructive, used for inserting/removing/replacing elements in the original array.
 // The return values are different: slice() returns the extracted copy, while splice() returns the removed elements."
+
+arr4=[2,3,4,5,8]
+console.log(arr4.reverse())
