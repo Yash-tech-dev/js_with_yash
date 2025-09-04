@@ -43,7 +43,7 @@ chai()
 //======================implicit return in arrow func===========================
 
 const addnum=(num1,num2)=> (num1+num2)  // note  we use only round brackets not the curly brackets in implicit return of parameters value
-console.log((addnum(5,6))) // 11
+//console.log((addnum(5,6))) // 11
 
 
 

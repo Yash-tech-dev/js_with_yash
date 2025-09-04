@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>JS with Yash</title>
+
+    <style>.bg-back{ background-color: black;
+    color: white;
+    }
+        
+        
+        </style>
+</head>
+
+
+<body class="bg-back">
+    <div>
+        <h1 class="heading" id="head">
+            DOM Learning With JS
+        </h1>
+<h2>Lorem, ipsum dolor.</h2>
+<h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <ul>
+            <li class="list">Apple </li>
+            <li class="list">Banana</li>
+            <li class="list">Mango</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+// difference between innertext and innerContent
+
+// if you are using innertext it give only the visible text of the tag
+
+
+// if you use the innercontent then it give all the text even  text that is inside another tag and with property display:none
+
+
+//----------------------------------------------------------------------------------------------------------------------
+
+// nodelist is access by the querySelector 
+
+// querySelector or QuerySelectorAll return nodelist in which you can use forEach loop by applying styleing in multiple values
+
+
+// nodelist is different from array 
+// you can not access all the values at same time 
+
+// you have to convert nodelist into array then you can apply all the functions like map,filter etc 
+
+// In nodelist you can directly use only forEach function to access all the value in together
+
+//----------------------------------------------------------------------------------------------------------------------
+
+// if you are using document.getElementByClassName then it return (HTMLCollection)
+
+//but you cannot use forEach loop for iteratig the values ,you have to covert the HTMLCollection into array [].
+
+ //now you can use all the properties of array
+
+
+ // praticle example
+
+ // const r=document.getElementsByClassName('list')
+ // const myarr=Array.from(r)
+// myarr.forEach(function (l1) {
+  //  l1.style.color='orange'});

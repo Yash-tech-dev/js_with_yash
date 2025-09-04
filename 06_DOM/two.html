@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+// engineerv digest
+
+  <div class="container">
+    <!--this is comment-->
+    <div class="class">Monday</div>
+     <div class="class">TuesDay</div>
+      <div class="class">Wednesday</div>
+  </div>
+
+
+</body>
+<script>
+    const n=document.querySelector('.container') // here we are accessing the parnet div with class container to access its all children div tags and its content 
+    // console.log(n);
+    //  console.log(n.children);
+    //    console.log(n.children[2].innerHTML);
+    // for (let i = 0; i< n.children.length;i++) { // n.children.length se poori parent div tag ke elements access kar lenge
+    //  console.log(n.children[i].innerHTML); // yha pr children div tag ke content ko innerHTML se print kra rhe hai
+    //   }
+
+  n.children[1].style.color="orange"; // indvidually indexing value pe style lga skte hai
+
+  console.log(n.firstElementChild.style.color="green");
+    console.log(n.lastElementChild.style.color="yellow");
+//-----------------------------------------------------------------------------------------------------
+    // you can also access the child elements and parent element by using child element
+    // const dayOne=document.querySelector('.class')
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement) // you can access complete parent div tag by using this (parentElement)
+    // console.log(dayOne.nextElementSibling); // you caa travase next sibling ie next element 
+
+    //--------------------------------------------------------------------------------------------------------------------
+
+    // childNodes give you a complex tree structure using (NodeList)
+
+// What is childNodes?
+
+// childNodes is a property of a DOM node that returns a NodeList (like an array) of all child nodes of the given node.
+
+// It includes element nodes, text nodes (like whitespace or line breaks), and comment nodes.
+// text → The whitespace/newline after <div>
+
+
+console.log("Nodes:",n.childNodes);
+    
+     
+
+</script>
+</html>
