@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation part 2</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="container">
+        <ul class="list">
+            <li>JavaScript</li>
+        </ul>
+
+    </div>
+    <script>
+
+    // basic method to define list and thier items
+        // const ul=document.createElement('ul')
+        // console.log(ul);
+        // const li=document.createElement('li')
+        // li.textContent="Apple"
+        // ul.appendChild(li)
+
+//-----------------------------------------------------------
+// using function to create the list with items
+function addLanguage(langName){
+    const l1=document.createElement('li'); //creating the <li> tag
+    l1.innerHTML=`${langName}` // writes the content in variable name which is  defined as parameter in above function 
+    document.querySelector('.list') //accsessing the class of <ul> tag
+    .appendChild(l1) // adding the content of li tag in ul tag
+}
+    addLanguage('Python')    
+    addLanguage('C++')
+                
+//------------------------------------------------------------------------------------------------------
+// another way (optimized way) to create list with item using function
+function addOptiLanguage(langName){
+    const l1=document.createElement('li');
+    l1.appendChild(document.createTextNode(langName))
+    document.querySelector('.list').appendChild(l1)
+}
+addOptiLanguage('CSharp')
+
+// edit or replace the nth child value with new value
+const secondvalue=document.querySelector("li:nth-child(2)")
+const newli=document.createElement('li')
+newli.textContent="C#"
+secondvalue.replaceWith(newli)
+
+//another way to edit the item 
+const firstlang=document.querySelector('li:first-child')
+firstlang.outerHTML=('<li>TypeScript</li>')
+
+// to delete any item in list using js 
+
+const itemName=document.querySelector('li:last-child') //selecting the refrence of the element
+itemName.remove()
+
+
+    </script>
+</body>
+</html>

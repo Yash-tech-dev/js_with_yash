@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body style="background-color: rgb(6, 5, 5);">
+
+
+    
+</body>
+<script>
+
+    // if you want to create the HTML elemenets in js then you will use createElement
+
+    const div=document.createElement('div') // you will define the html tag in brackets
+    console.log(div);
+    div.className='main' // you can define the styling attributes like class ,id and other various selector
+    div.id="index"
+
+    //-------------------------------------------------
+    //use of setAttribute
+    div.setAttribute("title","my title") // another attribute in div tag in key value pair form
+    div.style.backgroundColor="green"
+    div.style.padding="20px"
+    // div.innerText="this is my div tag"
+    // another way to add text in your div , it can also done by innerText 
+
+const addText=document.createTextNode("This is my Div Tag")
+div.appendChild(addText)
+
+// actually till now all the styling is saved only in memory but now we have to add this div in our window to show the output in div tag
+// it is done by (.appendChild method)
+
+document.body.appendChild(div)
+</script>
+</html>
