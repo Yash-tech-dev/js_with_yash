@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Learn JS with me </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    const sayDate=function(){
+   console.log("Yash",Date.now());
+        
+        
+    }
+//    const intervalid= setInterval(sayDate,1000)
+  
+   document.querySelector('#start').addEventListener('click',function(){
+
+ stopit=setInterval(sayDate,1000)  // setInterval executes the block of code continousally 
+console.log("hello start");
+
+        
+        
+    })
+
+    document.querySelector('#stop').addEventListener('click',function(){
+ clearInterval(stopit)  //used to stop the execution of setIntervalmethod
+ console.log("hello stop");
+    })
+
+</script>
+
+</html>

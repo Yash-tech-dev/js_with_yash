@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+
+    </div>
+</body>
+<script>
+     // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+     // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log(e);
+        
+    // },false) // by default value bhi false hi hoti h islie isko nhi likhte hai
+
+//---------------------------------------------------------------------------------------------
+//Event Propogation 
+// // Event Bubbling
+// //-------------------------
+
+// // 🔹 What is Event Bubbling?
+
+// // Event bubbling is the process where an event starts from the target element (the deepest/innermost element that was interacted with) and then bubbles up through its ancestors (parent → grandparent → ... → document).
+
+// // 👉 Think of it like a ripple: you click on a button inside a <div>, the event first fires on the button, then on the <div>, then on <body>, then on <html>, and finally on document.
+
+//     // examples
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside the ul");
+        
+    // },false) // output => clicked inside the ul
+
+
+//     document.getElementById('owl').addEventListener('click',function(e){
+//         console.log('owl image clicked');
+        
+//     },false)
+
+//     // output => owl image clicked 
+//     //          clicked inside the ul  // at first it prints tha value of owl class then it prints tha value of ul class images.
+//     // this is happening bcoj of (Event Bubbling) in which element are accessed from bottom to up.
+
+//============================================================================================================================================
+//     // Event Capturing mode
+
+// //  🔹 What is Event Capturing?
+
+// // Event capturing is the opposite of bubbling.
+
+// // The event starts at the topmost ancestor (document → html → body → parent → child)
+
+// // …and trickles downward until it reaches the actual target element.
+
+// // By default, browsers don’t use capturing (they use bubbling). But you can enable it.
+
+// // If useCapture = false (default) → bubbling mode.
+
+// // If useCapture = true → capturing mode.
+
+// // example value will be true in this
+
+// document.getElementById('images').addEventListener('click',function(e){
+//         console.log("clicked inside the ul");
+        
+//     },true) // output => clicked inside the ul
+
+
+//     document.getElementById('owl').addEventListener('click',function(e){
+//         console.log('owl image clicked');
+        
+//     },true)
+
+
+    // if yo want to stop the bubbling prpogation then you can use [e.stopPropogation() method]
+document.getElementById('owl').addEventListener('click',function(e){
+        console.log('owl image clicked');
+        e.stopPropagation()
+        
+    },false)
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+// removing the images or data items using eventlistener
+//------------------------------------------------------------------------------------------------------------
+
+ducument.querySelector('#images').addEventListener('click',function(e){
+    console.log(e.target.tagName);
+    if(e.target.tagName==='IMG'){
+        console.log(e.target.id);
+        let removeIt=e.target.parentNode
+        removeIt.remove()
+        
+    }
+    
+})
+
+</script>
+</html>

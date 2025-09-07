@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS With Yash</title>
+</head>
+<body>
+    <div id="container">
+        <h1>JS With Yash</h1>
+        <button class="btn">
+            Click Here
+        </button>
+    </div>
+</body>
+<script>
+    const sayYash=function(){
+        console.log("JS With Yash");
+        
+    }
+    const changetext=function(){
+        document.querySelector('h1').innerHTML="Here you learn from scratch"
+    }
+   const change= setTimeout(changetext,2000) // change the text after 2 seconds permanently
+
+
+   document.querySelector('.btn').addEventListener('click',function(){
+    clearTimeout(change) // used for to stop the working of setTimeout method
+    console.log("stopped");
+    
+   })
+</script>
+</html>
