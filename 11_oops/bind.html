@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIND</title>
+</head>
+<body>
+    <div>
+        <button>Button Clicked</button>
+    </div>
+</body>
+<script>
+    class react{
+        constructor(){
+            this.library="react"
+            this.server="https://localhost:300"
+
+            document.querySelector('button').addEventListener('click',this.handleClick.bind(this))  //.bind(this) wraps the method in a new function that always uses your original object’s this, so you can safely access its properties.
+        }
+        handleClick(){
+            console.log("button is clicked");
+            console.log(this.server);
+            console.log(this.library);
+            console.log(this);
+            
+            
+            
+            
+        }
+    }
+    const obj=new react()
+</script>
+</html>
+
+<!-- bind is a method available on all functions in JavaScript.
+It creates a new function where the this value is permanently set (or “bound”) to whatever you specify.
+It can also preset arguments. -->

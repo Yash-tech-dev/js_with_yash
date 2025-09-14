@@ -23,7 +23,7 @@ if (playGame) {
     });
 }
 function validateGuess(guess) {
-    //check that number should be in range
+    //check that number should be in range  
     if (isNaN(guess)) {
         alert('Please enter a valid number')
     }
@@ -35,7 +35,7 @@ function validateGuess(guess) {
     }
     else {
         prevGuess.push(guess)
-        if (numGuess === 11) {
+        if (numGuess === 10) {
             displayGuess(guess)
             displayMeassage(`Game Over .Random Number was ${randomNumber}`)
             endGame()
@@ -80,15 +80,43 @@ function displayMeassage(message) {
 }
 
 function endGame() {
-   userInput.value=''
-   userInput.setAttribute('disabled','')
-   p.classList.add('button')
-   p.innerHTML= `<h2 id="newGame">Start new Game</h2>`
-   startOver.appendChild(p)
-   playGame=false
-   newGame();
+  userInput.value = '';
+  userInput.setAttribute('disabled', '');
 
+  p.classList.add('button');
+  p.innerHTML = `<button id="newGame">Start New Game</button>`;
+  startOver.appendChild(p);
+
+  // style the new button
+  const newGameBtn = document.getElementById('newGame');
+  newGameBtn.style.background = "linear-gradient(135deg, #ffcc70, #ff8177)";
+  newGameBtn.style.color = "#1f1c2c";
+  newGameBtn.style.fontWeight = "bold";
+  newGameBtn.style.fontSize = "18px";
+  newGameBtn.style.border = "none";
+  newGameBtn.style.borderRadius = "12px";
+  newGameBtn.style.padding = "12px 20px";
+  newGameBtn.style.marginTop = "20px";
+  newGameBtn.style.cursor = "pointer";
+  newGameBtn.style.transition = "0.3s";
+  newGameBtn.style.width = "85%";
+  newGameBtn.style.boxShadow = "0px 4px 12px rgba(0,0,0,0.3)";
+
+  // hover effect
+  newGameBtn.addEventListener("mouseover", () => {
+    newGameBtn.style.transform = "scale(1.05)";
+    newGameBtn.style.boxShadow = "0px 6px 15px rgba(255, 129, 119, 0.6)";
+  });
+
+  newGameBtn.addEventListener("mouseout", () => {
+    newGameBtn.style.transform = "scale(1)";
+    newGameBtn.style.boxShadow = "0px 4px 12px rgba(0,0,0,0.3)";
+  });
+
+  playGame = false;
+  newGame();
 }
+
 
 
 function newGame() {
